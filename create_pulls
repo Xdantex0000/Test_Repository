@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Create pull request for repository
+gh pr create -p Test_Repository -B release -t "GH pull request" -b "Body of pull request"
+gh pr create -p Test2_Repository -B release -t "GH pull request" -b "Body of pull request"
