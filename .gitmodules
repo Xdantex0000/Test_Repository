@@ -1,0 +1,3 @@
+[submodule "Test_Sub"]
+	path = Test_Sub
+	url = https://github.com/Xdantex0000/Test_Sub
