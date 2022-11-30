@@ -11,5 +11,4 @@ jobs:
     permissions:
       issues: write
     steps:
-      - uses: actions/github-script@v6
-        run: echo context.repo.owner
+      run: echo context.repo.owner
