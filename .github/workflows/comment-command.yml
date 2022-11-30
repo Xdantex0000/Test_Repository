@@ -9,4 +9,4 @@ jobs:
   merge:
     name: Merge
     if: github.event.comment.body == '/merge'
-    uses: xdantex0000/test_repository/tree/main/.github/workflows/labeled.yml
+    uses: .github/workflows/labeled.yml@main
