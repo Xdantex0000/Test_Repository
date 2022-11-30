@@ -12,14 +12,8 @@ jobs:
       issues: write
     steps:
       - name: Repo
-        run: echo ${{ github.event.repo }}
+        run: echo ${{ github.event.issue.comments }}
         
-      - name: Owner
-        run: echo ${{ github.event.repo.owner }}
-
-      - name: Number
-        run: echo ${{ github.event.issue.number }}
-
 # jobs:
 #   merge:
 #     if: github.event.comment.body == '/merge'
