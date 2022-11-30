@@ -12,10 +12,7 @@ jobs:
       issues: write
     steps:
       - name: Owner
-        run: echo ${{ context.repo.owner }}
-        
-      - name: Repo
-        run: echo ${{ context.repo }} 
+        run: echo ${{ github.event.issue.number }}
 
 # jobs:
 #   merge:
