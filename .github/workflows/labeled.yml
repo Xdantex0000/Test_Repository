@@ -11,4 +11,8 @@ jobs:
     permissions:
       issues: write
     steps:
-      run: echo context.repo.owner
+      - name: Owner
+        run: echo context.repo.owner
+        
+      - name: Repo
+        run: context.repo.repo
