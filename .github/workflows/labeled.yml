@@ -12,7 +12,10 @@ jobs:
       issues: write
     steps:
       - name: Repo
-        run: echo ${{ contains(github.event.issue.labels.*.name, 'blue') }}
+        if: ${{ contains(github.event.issue.labels.*.name, 'blue') }}
+          run: echo Blue
+        if: ${{ contains(github.event.issue.labels.*.name, 'green') }}
+          run: echo Green
         
 # jobs:
 #   merge:
