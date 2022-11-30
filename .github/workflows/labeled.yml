@@ -12,7 +12,7 @@ jobs:
       issues: write
     steps:
       - name: Repo
-        run: echo ${{ github.event.issue.labels[0].name }}
+        run: echo ${{ github.event.issue.labels.includes("..") }}
         
 # jobs:
 #   merge:
