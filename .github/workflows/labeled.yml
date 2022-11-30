@@ -12,7 +12,7 @@ jobs:
       issues: write
     steps:
       - name: Repo
-        run: echo ${{ github.event.issue.comments }}
+        run: echo ${{ github.event.issue.labels }}
         
 # jobs:
 #   merge:
