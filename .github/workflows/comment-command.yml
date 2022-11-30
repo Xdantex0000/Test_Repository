@@ -8,4 +8,4 @@ jobs:
   merge:
     name: Merge
     if: github.event.comment.body == '/merge'
-    uses: .github/workflows/labeled.yml@main
+    uses: ./.github/workflows/labeled.yml@main
