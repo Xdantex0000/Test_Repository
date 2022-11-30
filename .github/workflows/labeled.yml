@@ -11,9 +11,10 @@ jobs:
     permissions:
       issues: write
     steps:
-      - name: Repo
+      - name: BlueDefine
         if: ${{ contains(github.event.issue.labels.*.name, 'blue') }}
         run: echo Blue
+      - name: GreenDefine
         if: ${{ contains(github.event.issue.labels.*.name, 'green') }}
         run: echo Green
         
