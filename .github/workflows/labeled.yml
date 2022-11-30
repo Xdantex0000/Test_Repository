@@ -3,20 +3,6 @@ name: Label on merge
 on:
   workflow_call:
 
-# jobs:
-#   merge:
-#     if: github.event.comment.body == '/merge'
-#     name: Merge
-#     runs-on: ubuntu-latest
-#     permissions:
-#       issues: write
-#     steps:
-#       - name: Owner
-#         run: echo context.repo.owner
-        
-#       - name: Repo
-#         run: context.repo.repo
-
 jobs:
   merge:
     if: github.event.comment.body == '/merge'
@@ -25,11 +11,25 @@ jobs:
     permissions:
       issues: write
     steps:
-      - uses: actions/github-script@v6
-        with:
-          script: |
-            echo github.rest.pulls.get({
-              owner: context.repo.owner,
-              repo: context.repo,
-              pull_number: context.issue.number,
-            })
+      - name: Owner
+        run: echo ${{ context.repo.owner }}
+        
+      - name: Repo
+        run: echo ${{ context.repo }} 
+
+# jobs:
+#   merge:
+#     if: github.event.comment.body == '/merge'
+#     name: Merge
+#     runs-on: ubuntu-latest
+#     permissions:
+#       issues: write
+#     steps:
+#       - uses: actions/github-script@v6
+#         with:
+#           script: |
+#             echo github.rest.pulls.get({
+#               owner: context.repo.owner,
+#               repo: context.repo,
+#               pull_number: context.issue.number,
+#             })
