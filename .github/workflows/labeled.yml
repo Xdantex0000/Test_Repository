@@ -1,11 +1,12 @@
-name: Label issues
+name: Label on merge
+
 on:
-  issues:
-    types:
-      - reopened
-      - opened
+  workflow_call:
+
 jobs:
-  label_issues:
+  merge:
+    if: github.event.comment.body == '/merge'
+    name: Merge
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -13,9 +14,8 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
-            github.rest.issues.addLabels({
-              issue_number: context.issue.number,
+            echo github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ["triage"]
+              pull_number: context.issue.number,
             })

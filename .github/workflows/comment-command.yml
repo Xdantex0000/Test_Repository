@@ -1,0 +1,12 @@
+name: Comment Command
+
+on:
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  merge:
+    name: Merge
+    if: github.event.comment.body == '/merge'
+    uses: ./labeled.yml
